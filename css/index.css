@@ -1,0 +1,251 @@
+:root {
+  --bg: #0f0f0f;
+  --text: #dbdbdb;
+  --accent: #a08963;
+  --highlight: #c9b194;
+  --card-bg: #1a1a1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  background-color: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  filter: brightness(200%);
+}
+
+.logo h1 {
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  color: var(--highlight);
+}
+
+/* ===== Nav Bar ===== */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  transition: right 0.3s ease;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--highlight);
+  text-shadow: 0 0 6px rgba(201, 177, 148, 0.6);
+}
+
+/* ===== Hamburger ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 16px;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--text);
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+/* ===== Hero ===== */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-logo {
+  width: 160px;
+  animation: fadeInScale 2s ease forwards;
+  opacity: 0;
+}
+
+.hero h2 {
+  margin-top: 20px;
+  font-size: 1.6rem;
+  color: var(--highlight);
+  animation: fadeIn 3s ease forwards;
+  opacity: 0;
+}
+
+.divider {
+  width: 80px;
+  height: 2px;
+  background-color: var(--accent);
+  margin: 20px auto;
+}
+
+.hero p {
+  color: var(--text);
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer .socials {
+  margin-top: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+footer .socials i[data-lucide] {
+  width: 20px;
+  height: 20px;
+  stroke: var(--highlight);
+  transition: 0.3s;
+}
+
+footer .socials a {
+  color: var(--highlight);
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+
+footer .socials a:hover i[data-lucide] {
+  stroke: var(--text);
+  transform: scale(1.1);
+}
+
+footer .socials a:hover {
+  color: var(--text);
+  transform: scale(1.2);
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== Mobile Styles ===== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger span {
+    height: 3px;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  nav {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 240px;
+    height: 100vh;
+    background-color: rgba(15, 15, 15, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    gap: 25px;
+    padding: 40px 20px;
+    transition: right 0.4s ease;
+    display: flex;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — STUPA STUDIO</title>
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="icon" type="image/png" href="media/LOGOp.png" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/contact.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="media/LOGOp.png" alt="STUPA STUDIO Logo" />
+      <h1>STUPA STUDIO</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html"><i data-lucide="home"></i> Home</a></li>
+        <li><a href="about.html"><i data-lucide="info"></i> About</a></li>
+        <li><a href="downloads.html"><i data-lucide="download"></i> Downloads</a></li>
+        <li><a href="team.html"><i data-lucide="users"></i> Team</a></li>
+        <li><a href="contact.html" class="active"><i data-lucide="mail"></i> Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <div class="contact-container">
+      <h2>Get In Touch</h2>
+      <p>Have questions, feedback, or collaboration ideas? Let’s talk.</p>
+
+      <form class="contact-form" action="#" method="POST">
+        <div class="form-group">
+          <input type="text" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <textarea name="message" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn-send"><i data-lucide="send"></i> Send Message</button>
+      </form>
+
+      <div class="contact-socials">
+        <a href="#"><i data-lucide="youtube"></i></a>
+        <a href="#"><i data-lucide="github"></i></a>
+        <a href="#"><i data-lucide="linkedin"></i></a>
+        <a href="#"><i data-lucide="twitter"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+ <footer>
+    <p>© 2025 STUPA STUDIO — All Rights Reserved</p>
+    <div class="socials">
+      <a href="#" title="YouTube"><i data-lucide="youtube"></i></a>
+      <a href="#" title="GitHub"><i data-lucide="github"></i></a>
+      <a href="#" title="Twitter"><i data-lucide="twitter"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
